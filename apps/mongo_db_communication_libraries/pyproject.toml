@@ -1,0 +1,23 @@
+[project]
+name = "mongo_db_communication_libraries"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [{ name = "Tiago Ferreira", email = "tferreira@cegid.com" }]
+dependencies = [
+    "pydantic>=2.12.4",
+    "pydantic[email]>=2.12.4",
+    "beanie>=2.0.0",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.32.0",
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = { text = "MIT" }
+
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.scripts]
+# Start the FastAPI application
+start = "uvicorn --app-dir src mongo_db_communication_libraries.main:app --reload"
